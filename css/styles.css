@@ -599,6 +599,55 @@ transition: fill var(--standard);
     color: var(--accent-cl);
 }
 
+.follow-up {
+    margin-left: 93px;
+}
+
+.follow-title {
+    display: block;
+    margin-bottom: 35px;
+
+    color: var(--white-cl);
+        font-weight: 700;
+        font-size: 14px;
+        line-height:1;
+        letter-spacing: 0.42px;
+        text-transform: uppercase;
+}
+
+.follow-wrapper {
+    display: flex;
+}
+
+.follow-input {
+    cursor: pointer;
+    width: 358px;
+    height: 50px;
+    margin-right: 12px;
+
+    border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.30);
+        background: rgba(33, 150, 243, 0.00);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.follow-btn {
+    width: 200px;
+    height: 50px;
+    
+    border: none;
+    border-radius: 4px;
+        background: var(--accent-cl);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    color: var(--white-cl);
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.87;
+        letter-spacing: 0.96px;
+}
+
+
 /* Portfolio section */
 .filter.list {
     display: flex;
@@ -754,6 +803,7 @@ transition: fill var(--standard);
 }
 
 .modal-wrapper {
+    padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -785,8 +835,149 @@ transition: fill var(--standard);
     cursor: pointer;
 }
 
+.modal-form {
+    width: 448px;
+}
+
+.modal-title, .form-group, .agreement, .btn-submit, .form-label {
+    display: block;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-icon {
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+
+    fill: var(--title-cl);
+}
+
+.modal-title {
+    margin-bottom: 12px;
+    color:var(--title-cl);
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.6px;
+}
+.modal-wrapper .form-group {
+    margin-bottom: 10px;
+}
+
+.modal-wrapper .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-input {
+    position: relative;
+    cursor: pointer;
+    outline: transparent;
+    width: 100%;
+    height: 40px;
+    padding: 12px 42px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.20);
+
+    transition: border-color var(--standard);
+}
 
 
+.form-input:focus, .form-input:hover,
+.form-comment:focus, .form-comment:hover {
+    border: 1px solid #2196F3;
+    border-radius: 4px;
+}
+
+.form-comment {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    cursor: pointer;
+    outline: transparent;
+    width: 100%;
+    height: 120px;
+    border-radius: 4px;
+        border: 1px solid rgba(33, 33, 33, 0.20);
+    resize: none;
+
+    transition: border-color var(--standard);
+}
+
+.form-label {
+    margin-bottom: 4px;
+    color: var(--main-cl);
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 0.12px;
+}
+
+.policy-agreement {
+    display: flex;
+    align-items: center;
+    
+}
+
+.custom-checkbox {
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: 2px solid var(--title-cl);
+    outline-offset: -2px;
+    border-radius: 2px;
+
+    transition: outline var(--standard);
+}
+
+.checkbox-icon {
+    opacity: 0;
+
+    transition: opacity var(--standard);
+}
+
+.checkbox:checked + .custom-checkbox {
+    outline: transparent;
+}
+
+.checkbox:checked + .custom-checkbox .checkbox-icon {
+    opacity: 1;
+}
+
+.agreement {
+  
+    color: var(--main-cl);
+    font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.42px;
+}
+
+.terms {
+    color: var(--accent-cl);
+        line-height: 24px;
+        letter-spacing: 0.42px;
+}
+
+.btn-submit {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+        background: var(--accent-cl);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+    color: var(--white-cl);
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.87;
+        letter-spacing: 0.96px;
+}
 
 
 

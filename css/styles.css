@@ -67,14 +67,15 @@ img {
     cursor: pointer;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden {
     clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
 }
+
 /* header styles */
 .header {
     border-bottom: 1px solid var(--border-cl);
@@ -620,7 +621,9 @@ transition: fill var(--standard);
 }
 
 .follow-input {
-    cursor: pointer;
+    /* cursor: pointer; */
+    outline: transparent;
+    padding: 15px 16px;
     width: 358px;
     height: 50px;
     margin-right: 12px;
@@ -632,6 +635,9 @@ transition: fill var(--standard);
 }
 
 .follow-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 50px;
     
@@ -645,6 +651,15 @@ transition: fill var(--standard);
         font-weight: 700;
         line-height: 1.87;
         letter-spacing: 0.96px;
+}
+
+.follow-btn::after {
+    content: '';
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/icons/send.svg);
+    background-size: contain;
 }
 
 
@@ -843,18 +858,6 @@ transition: fill var(--standard);
     display: block;
 }
 
-.form-group {
-    position: relative;
-}
-
-.form-icon {
-    position: absolute;
-    bottom: 11px;
-    left: 12px;
-
-    fill: var(--title-cl);
-}
-
 .modal-title {
     margin-bottom: 12px;
     color:var(--title-cl);
@@ -864,17 +867,28 @@ transition: fill var(--standard);
         line-height: 1;
         letter-spacing: 0.6px;
 }
+
 .modal-wrapper .form-group {
     margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
 .modal-wrapper .form-group:last-child {
     margin-bottom: 0;
 }
 
+.form-label {
+    margin-bottom: 4px;
+    color: var(--main-cl);
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.12px;
+}
+
 .form-input {
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
     outline: transparent;
     width: 100%;
     height: 40px;
@@ -892,10 +906,25 @@ transition: fill var(--standard);
     border-radius: 4px;
 }
 
+.form-icon {
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+
+    fill: var(--title-cl);
+
+    transition: fill var(--standard);
+}
+
+.form-input:focus~.form-icon,
+.form-input:hover~.form-icon {
+    fill: var(--accent-cl);
+}
+
 .form-comment {
     margin-bottom: 20px;
     padding: 12px 16px;
-    cursor: pointer;
+    /* cursor: pointer; */
     outline: transparent;
     width: 100%;
     height: 120px;
@@ -906,9 +935,8 @@ transition: fill var(--standard);
     transition: border-color var(--standard);
 }
 
-.form-label {
-    margin-bottom: 4px;
-    color: var(--main-cl);
+.form-comment::placeholder {
+    color: rgba(117, 117, 117, 0.50);
         font-size: 12px;
         line-height: 1;
         letter-spacing: 0.12px;
@@ -916,7 +944,8 @@ transition: fill var(--standard);
 
 .policy-agreement {
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    justify-content: center;
     
 }
 
@@ -932,17 +961,20 @@ transition: fill var(--standard);
     outline-offset: -2px;
     border-radius: 2px;
 
-    transition: outline var(--standard);
+    transition: outline var(--standard),
+                background-color var(--standard);
 }
 
 .checkbox-icon {
     opacity: 0;
+    border-radius: 2px;
 
     transition: opacity var(--standard);
 }
 
 .checkbox:checked + .custom-checkbox {
-    outline: transparent;
+    outline: var(--accent-cl);
+    background-color: var(--accent-cl);
 }
 
 .checkbox:checked + .custom-checkbox .checkbox-icon {
@@ -950,7 +982,7 @@ transition: fill var(--standard);
 }
 
 .agreement {
-  
+   margin-bottom: 30px;
     color: var(--main-cl);
     font-size: 14px;
         line-height: 1.71;
@@ -964,6 +996,7 @@ transition: fill var(--standard);
 }
 
 .btn-submit {
+    margin: 0 auto;
     width: 200px;
     height: 50px;
     border: none;
